@@ -55,12 +55,24 @@ type Request = {
     "title": string,
     "content": string ,
 }
-export const salvarNovaSessao = async (dados: Request): Promise<Response> => {
-  const token = localStorage.getItem("token") 
-  const response = await httpClient.post<Response>("/occurrence", dados,{ 
+
+export const salvarNovaSessao = async (dados : any): Promise<Response> => {
+  console.log(dados)
+  const atributs = {
+    "type": "session",
+    "timelineId": "6457fff705a413679909edf3",
+    "title": dados.titulo,
+    "content": dados.resumoSessao,
+    "payment": {"value": dados.valor, "method": dados.formaDePagamento,"status" : dados.pago },
+  }
+  const token = localStorage.getItem('token') 
+  const response = await httpClient.post<Response>("/occurrence",  atributs , {
     
-    headers:{
-      Authorization: token, 'Content-Type': 'application/json' 
+    headers: {
+      'x-api-key': '1e7977ea-d97e-11ed-afa1-0242ac120002',
+      Authorization: token,
+      'Content-Type': 'application/json',
+      'Accept': '*/*',
     }
   });
 

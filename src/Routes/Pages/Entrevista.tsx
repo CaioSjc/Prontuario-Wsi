@@ -292,10 +292,9 @@ const EntrevistaPsicologica = () => {
                <br></br>
                <E.InputRespostaMargin3 placeholder={'Resposta'} />
                <E.ButtonSalvarList onClick={() => Navigate('/AplicaçaoTeste')} ><img src={Disket} />Salvar</E.ButtonSalvarList><E.ButtonPularList onClick={() => Navigate('/AplicaçaoTeste')} >Pular<img src={Rigth} /></E.ButtonPularList>
-              </E.ContentStyleList>
-        
-      </>
-    )
-  }
+        </E.ContentStyleList>      
+    </>
+  )
+}
   
-  export default EntrevistaPsicologica
+export default EntrevistaPsicologica

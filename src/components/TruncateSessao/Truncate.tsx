@@ -1,12 +1,12 @@
-import {useState} from 'react'
-import S  from '../../Styles/StyleSessãoCard'
+import { useState } from 'react'
+import S from '../../Styles/StyleSessãoCard'
 
 type Props = {
   size?: number
   children: string
 }
 
-const Truncate = ({size = 220, children}: Props) => {
+const Truncate = ({ size = 220, children }: Props) => {
   const currentTextSize = children.length
   const showTrunc = size >= currentTextSize
   const [show, setShow] = useState(showTrunc)
@@ -18,10 +18,12 @@ const Truncate = ({size = 220, children}: Props) => {
 
   return (
     <>
-      {showTrunc ? children : (
+      {showTrunc ? (
+        children
+      ) : (
         <>
-          {children.slice(0, currentSize).padEnd(show ? currentSize : currentSize + 3, '.')}
-          {' '}<S.Span onClick={toogle}>{show ? 'Ver menos' : 'Ver mais'}</S.Span>
+          {children.slice(0, currentSize).padEnd(show ? currentSize : currentSize + 3, '.')}{' '}
+          <S.Span onClick={toogle}>{show ? 'Ver menos' : 'Ver mais'}</S.Span>
         </>
       )}
     </>

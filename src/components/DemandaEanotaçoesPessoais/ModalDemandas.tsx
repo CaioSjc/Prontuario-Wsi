@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
 import {schema} from '../../Utils/TesteDemanda'
 import { FormValuesDemanda, defaultValues } from "../FormsContent/FormDemandas"
-import { timelineService } from '@/Services/Demandas/Demanda-service'
+
 
 type ModalPropsDemanda = {
   isOpen: boolean
@@ -19,10 +19,11 @@ const ModalDemandas = ({ isOpen, onClose }: ModalPropsDemanda) => {
       defaultValues
     }) 
   console.log(errors)
-  const onSubmit = (data: Partial<FormValuesDemanda>) => {
-    timelineService.postCriar(data as any)
+  
+  const onSubmit = (data: Partial<FormValuesDemanda>) => {   
   console.log(data)
   }
+
   return (
     <>
       {isOpen && (

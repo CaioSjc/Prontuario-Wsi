@@ -14,8 +14,16 @@ height: 350px;
 margin-left: 160px;
 `
 
+const LoaderStyle2 = styled.img`
+width: 180px;
+height: 180px;
+margin-left: 380px;
+margin-top: -60px;
+`
+
 
 export default {
     ContainerLoader,
     LoaderStyle,
+    LoaderStyle2,
 }

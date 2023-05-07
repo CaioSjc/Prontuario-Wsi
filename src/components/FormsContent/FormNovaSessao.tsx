@@ -17,7 +17,7 @@ export const defaultValues: DefaultValues<FormValues> = {
   horaFim: 0,
   titulo: '',
   resumoSessao: '',
-  valor: 0,
+  valor: 0, 
   formaDePagamento: '',
   pago: ''
 }
